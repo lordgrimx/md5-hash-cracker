@@ -12,7 +12,7 @@ This project is a web application that allows users to generate MD5 hashes and a
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/md5-hash-cracker.git
+    git clone https://github.com/lordgrimx/md5-hash-cracker.git
     cd md5-hash-cracker
     ```
 

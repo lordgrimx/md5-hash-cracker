@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Dokümantasyonu &mdash; MD5 Hash Cracker  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Kurulum" href="installation.html" />
+    <link rel="prev" title="MD5 Hash Cracker Dokümantasyonu" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MD5 Hash Cracker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">İçindekiler:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Dokümantasyonu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hash-islemleri">Hash İşlemleri</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.generate_random_password"><code class="docutils literal notranslate"><span class="pre">generate_random_password()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.generate_md5"><code class="docutils literal notranslate"><span class="pre">generate_md5()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.crack_hash"><code class="docutils literal notranslate"><span class="pre">crack_hash()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#web-arayuzu">Web Arayüzü</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.generate_hash"><code class="docutils literal notranslate"><span class="pre">generate_hash()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.crack_hash_route"><code class="docutils literal notranslate"><span class="pre">crack_hash_route()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.get_status"><code class="docutils literal notranslate"><span class="pre">get_status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.stop_cracking"><code class="docutils literal notranslate"><span class="pre">stop_cracking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#yardimci-fonksiyonlar">Yardımcı Fonksiyonlar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.set_process_priority"><code class="docutils literal notranslate"><span class="pre">set_process_priority()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.calculate_optimal_settings"><code class="docutils literal notranslate"><span class="pre">calculate_optimal_settings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.init_worker"><code class="docutils literal notranslate"><span class="pre">init_worker()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.process_chunk"><code class="docutils literal notranslate"><span class="pre">process_chunk()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Kurulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Kullanım</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MD5 Hash Cracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Dokümantasyonu</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-dokumantasyonu">
+<h1>API Dokümantasyonu<a class="headerlink" href="#api-dokumantasyonu" title="Link to this heading"></a></h1>
+<section id="hash-islemleri">
+<h2>Hash İşlemleri<a class="headerlink" href="#hash-islemleri" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.generate_random_password">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">generate_random_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#generate_random_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.generate_random_password" title="Link to this definition"></a></dt>
+<dd><p>Belirtilen uzunlukta rastgele bir şifre oluşturur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>length</strong> (<em>int</em>) – Oluşturulacak şifrenin uzunluğu. Varsayılan değer 8.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rastgele oluşturulmuş şifre.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.generate_md5">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">generate_md5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#generate_md5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.generate_md5" title="Link to this definition"></a></dt>
+<dd><p>Verilen şifre için MD5 hash değeri oluşturur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>str</em><em>|</em><em>bytes</em>) – Hash’lenecek şifre.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Oluşturulan MD5 hash değeri.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crack_hash">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">crack_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hash_to_crack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#crack_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.crack_hash" title="Link to this definition"></a></dt>
+<dd><p>Verilen hash değerini kırmak için brute-force yaklaşımı kullanır.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hash_to_crack</strong> (<em>str</em>) – Kırılmaya çalışılacak hash değeri.</p></li>
+<li><p><strong>max_length</strong> (<em>int</em>) – Denenecek maksimum şifre uzunluğu. Varsayılan 16.</p></li>
+<li><p><strong>process_multiplier</strong> (<em>int</em>) – Process sayısı çarpanı. Varsayılan 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(bulunan_şifre, toplam_deneme, bulunan_deneme) üçlüsü.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="web-arayuzu">
+<h2>Web Arayüzü<a class="headerlink" href="#web-arayuzu" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.generate_hash">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">generate_hash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#generate_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.generate_hash" title="Link to this definition"></a></dt>
+<dd><p>Verilen şifre için MD5 hash değeri oluşturur.</p>
+<dl class="simple">
+<dt>Form Args:</dt><dd><p>password (str): Hash’lenecek şifre.
+random (str): Rastgele şifre oluşturma seçeneği (‘true’ veya ‘false’).
+length (int): Rastgele şifre uzunluğu.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hash değeri ve kullanılan şifre.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>json</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crack_hash_route">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">crack_hash_route</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#crack_hash_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.crack_hash_route" title="Link to this definition"></a></dt>
+<dd><p>Hash kırma işlemini başlatır.</p>
+<dl class="simple">
+<dt>Form Args:</dt><dd><p>hash (str): Kırılacak hash değeri.
+max_length (int): Maksimum şifre uzunluğu.
+process_multiplier (int): Process sayısı çarpanı.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>İşlem durumu ve mesaj.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>json</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>400</strong> – Geçersiz istek durumunda.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_status">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_status" title="Link to this definition"></a></dt>
+<dd><p>Hash kırma işleminin mevcut durumunu döndürür.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>İşlem durumu, deneme sayısı ve process bilgileri.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>json</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.stop_cracking">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">stop_cracking</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#stop_cracking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.stop_cracking" title="Link to this definition"></a></dt>
+<dd><p>Hash kırma işlemini durdurur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Durdurma işleminin sonucu.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>json</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>500</strong> – İşlem durdurulurken hata oluştuğunda.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="yardimci-fonksiyonlar">
+<h2>Yardımcı Fonksiyonlar<a class="headerlink" href="#yardimci-fonksiyonlar" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.set_process_priority">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">set_process_priority</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#set_process_priority"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.set_process_priority" title="Link to this definition"></a></dt>
+<dd><p>Process önceliğini maksimum CPU kullanımı için yükseğe ayarlar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – Process önceliği ayarlanamadığında oluşan hata.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.calculate_optimal_settings">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">calculate_optimal_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#calculate_optimal_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.calculate_optimal_settings" title="Link to this definition"></a></dt>
+<dd><p>Sistem kaynaklarına göre optimal ayarları hesaplar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(process_sayısı, chunk_boyutu) çifti.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.init_worker">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">init_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shared_stats</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#init_worker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.init_worker" title="Link to this definition"></a></dt>
+<dd><p>Worker process’leri paylaşılan istatistiklerle başlatır.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shared_stats</strong> (<em>dict</em>) – Process’ler arasında paylaşılan istatistik sözlüğü.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.process_chunk">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">process_chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_hash</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_attempt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#process_chunk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.process_chunk" title="Link to this definition"></a></dt>
+<dd><p>Şifre kombinasyonlarının bir parçasını işleyerek hedef hash’i bulmaya çalışır.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chunk</strong> (<em>list</em>) – İşlenecek şifre kombinasyonları listesi.</p></li>
+<li><p><strong>target_hash</strong> (<em>str</em>) – Bulunmaya çalışılan hedef hash değeri.</p></li>
+<li><p><strong>start_attempt</strong> (<em>int</em>) – Bu chunk için başlangıç deneme sayısı.</p></li>
+<li><p><strong>process_id</strong> (<em>int</em>) – İşlem yapan process’in ID’si.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(bulunan_şifre, deneme_sayısı) çifti. Şifre bulunamazsa (None, deneme_sayısı).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="MD5 Hash Cracker Dokümantasyonu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Kurulum" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Your Name.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
